@@ -25,7 +25,7 @@ async function fetchData(urlApi) {
         const videos = await fetchData(API)
         console.log(videos.items[0].snippet.thumbnails.high.url)
 
-        let view = `
+        content.innerHTML = `
          ${videos.items.map(video => `
          <div class="group relative">
                 <div
@@ -42,7 +42,6 @@ async function fetchData(urlApi) {
          `).slice(0, 6).join('')}
          
         `;
-        content.innerHTML = view;
 
     } catch (error) {
         console.log(error);
